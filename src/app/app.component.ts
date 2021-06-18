@@ -1,6 +1,7 @@
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Image } from './image';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -19,9 +20,7 @@ export class AppComponent {
   items: Image[] = [];
 
   public ngOnInit() {
-    this.httpClient.get<Image[]>('http://localhost:8680/images/list').subscribe((resp) => {
-      this.items = resp;
-    });
+    this.updateImages();
   }
 
   //Gets called when the user selects an image
@@ -34,29 +33,22 @@ export class AppComponent {
       const uploadImageData = new FormData();
       uploadImageData.append('files', file);
       //Make a call to the Spring Boot Application to save the image
-      this.httpClient.post('http://localhost:8680/images/uploadFile', uploadImageData, { observe: 'response' })
+      this.httpClient.post(environment.baseUrl + '/images/uploadFile', uploadImageData, { observe: 'response' })
         .subscribe((response) => {
           if (response.status !== 200) {
             this.message = 'Image not uploaded successfully';
           }
+          this.updateImages();
         }
         );
-    }
-    this.selectedFile = [];
-    
+    }    
   }
 
-    //Gets called when the user clicks on retieve image button to get the image from back end
-    getImage() {
-    //Make a call to Sprinf Boot to get the Image Bytes.
-    this.httpClient.get('http://localhost:8680/images/getImage?filename=' + this.imageName)
-      .subscribe(
-        res => {
-          this.retrieveResonse = res;
-          this.base64Data = this.retrieveResonse.picByte;
-          this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data;
-        }
-      );
+  public updateImages() {
+    this.httpClient.get<Image[]>(environment.baseUrl + '/images/list').subscribe((resp) => {
+      this.items = resp;
+    });
   }
+
 }
 

@@ -1,4 +1,4 @@
-
+<div style="margin: 2% 5%;">
 <div class="container row">
   <div class="form">
       <input type="file" name="files" (change)="onFileChanged($event)" multiple>
@@ -12,7 +12,7 @@
 </div>
 <hr />
 <div class="container row">
-  <div *ngFor="let item of items">
-        <img *ngIf="item.thumbnailUrl" src="{{ item?.thumbnailUrl }}" alt="" />
+  <div class="col-md-12">
+      <a *ngFor="let item of items" href="{{ item?.url }}"><img src="{{ item?.thumbnailUrl }}"></a>
   </div>
-</div>
+</div></div>
