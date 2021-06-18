@@ -27,9 +27,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/photobox.css"
             ],
-            "scripts": []
+            "scripts": ["src/photobox.min.js"]
           },
           "configurations": {
             "production": {

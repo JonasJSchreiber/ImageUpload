@@ -1,6 +1,7 @@
 export interface Image {
-    filename: string;
+    title: string;
     thumbnailName: string;
     thumbnailUrl: string;
     url: string;
+    altText: string;
   }

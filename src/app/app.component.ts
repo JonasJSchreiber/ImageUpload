@@ -2,7 +2,7 @@ import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Image } from './image';
 import { environment } from '../environments/environment';
-
+declare  var jQuery:  any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -20,6 +20,11 @@ export class AppComponent {
   items: Image[] = [];
 
   public ngOnInit() {
+    (function ($) {
+      $(document).ready(function(){
+        $('.col-md-12').photobox('a',{ time:0 });
+      });
+    })(jQuery);
     this.updateImages();
   }
 
