@@ -33,7 +33,7 @@ export class AppComponent {
       const uploadImageData = new FormData();
       uploadImageData.append('files', file);
       //Make a call to the Spring Boot Application to save the image
-      this.httpClient.post(environment.baseUrl + '/images/uploadFile', uploadImageData, { observe: 'response' })
+      this.httpClient.post(environment.baseUrl + '/files/uploadFile', uploadImageData, { observe: 'response' })
         .subscribe((response) => {
           if (response.status !== 200) {
             this.message = 'Image not uploaded successfully';
@@ -45,7 +45,7 @@ export class AppComponent {
   }
 
   public updateImages() {
-    this.httpClient.get<Image[]>(environment.baseUrl + '/images/list').subscribe((resp) => {
+    this.httpClient.get<Image[]>(environment.baseUrl + '/files/list').subscribe((resp) => {
       this.items = resp;
     });
   }
