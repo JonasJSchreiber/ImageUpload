@@ -12,10 +12,16 @@
 </div>
 <hr />
 <div class="container row">
+  
   <div class="col-md-12">
-      <a *ngFor="let item of items" href="{{ item?.type == 'video' ? item?.url : '' }}"><img src="{{  item?.type == 'video' ? item?.thumbnailUrl : '' }}"></a>
+    <h3 style="color='#000 !important'">Videos</h3>
+    <a *ngFor="let item of items" href="{{ item?.type == 'video' ? item?.url : '' }}"><img src="{{  item?.type == 'video' ? item?.thumbnailUrl : '' }}"></a>
   </div>
+  <hr />
+  
   <div class="col-md-10">
-      <a *ngFor="let item of items" href="{{ item?.type == 'image' ? item?.url : '' }}"><img src="{{  item?.type == 'image' ? item?.thumbnailUrl : '' }}"></a>
+    <h2>Images</h2>
+    <a *ngFor="let item of items" href="{{ item?.type == 'image' ? item?.url : '' }}"><img src="{{  item?.type == 'image' ? item?.thumbnailUrl : '' }}"></a>
   </div>
+  
 </div></div>
