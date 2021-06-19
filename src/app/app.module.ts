@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { NgImageFullscreenViewModule } from 'ng-image-fullscreen-view';
 @NgModule({
   declarations: [
     AppComponent
@@ -14,8 +13,7 @@ import { NgImageFullscreenViewModule } from 'ng-image-fullscreen-view';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
-    NgImageFullscreenViewModule
+    FormsModule
   ],
 
   providers: [],
