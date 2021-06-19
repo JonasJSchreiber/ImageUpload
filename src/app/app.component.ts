@@ -1,12 +1,14 @@
 import { HttpClient, HttpEventType } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, Input } from "@angular/core";
 import { FileModel } from './fileModel';
+import { Button } from '@material-ui/core';
+import Container from '@material-ui/core/Container';
 import { environment } from '../environments/environment';
 declare  var jQuery:  any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
 })
 
 export class AppComponent {
@@ -17,15 +19,17 @@ export class AppComponent {
   base64Data: any;
   retrieveResonse: any;
   message!: String;
-  items: FileModel[] = [];
+  videos: FileModel[] = [];
+  images: FileModel[] = [];
 
+	@Input() pushMainContentToRight: boolean = false;
   public ngOnInit() {
     (function ($) {
       $(document).ready(function(){
-        $('.col-md-10').photobox('a',{ time:0 });
+        $('.col-md-12').photobox('a',{ time:0 });
       });
     })(jQuery);
-    this.updateImages();
+    this.fetchFiles();
   }
 
   //Gets called when the user selects an image
@@ -43,15 +47,24 @@ export class AppComponent {
           if (response.status !== 200) {
             this.message = 'Image not uploaded successfully';
           }
-          this.updateImages();
+          this.fetchFiles();
         }
         );
     }    
   }
 
-  public updateImages() {
+  public fetchFiles() {
     this.httpClient.get<FileModel[]>(environment.baseUrl + '/files/list').subscribe((resp) => {
-      this.items = resp;
+      let files: FileModel[] = resp;
+      this.images = [];
+      this.videos = [];
+      for (var i of files) {
+        if (i.type == 'image') {
+          this.images.push(i);
+        } else if (i.type == 'video') {
+          this.videos.push(i);
+        }
+      }
     });
   }
 

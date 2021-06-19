@@ -27,8 +27,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "src/photobox.css"
+              "src/styles.scss",
+              "src/photobox.scss"
             ],
             "scripts": ["src/photobox.min.js"]
           },
@@ -95,12 +95,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
         }
       }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
     }
   },
   "defaultProject": "ImageUpload"

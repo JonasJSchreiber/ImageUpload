@@ -1,27 +1,21 @@
-<div style="margin: 2% 5%;">
-<div class="container row">
-  <div class="form">
-      <input type="file" name="files" (change)="onFileChanged($event)" multiple>
-      <p>Upload</p>
-  </div>
+
+<div class="form">
+    <input type="file" name="files" (change)="onFileChanged($event)" multiple>
+    <p>Upload</p>
 </div>
-<div class="container row">
-  <div class="col-md-12">
-      <div *ngIf=message>{{message}}</div>
-  </div>
+<div *ngIf=message>{{message}}</div>
+
+<div class="header-text">
+<span>Videos</span>
 </div>
-<hr />
-<div class="container row">
-  
-  <div class="col-md-12">
-    <h3 style="color='#000 !important'">Videos</h3>
-    <a *ngFor="let item of items" href="{{ item?.type == 'video' ? item?.url : '' }}"><img src="{{  item?.type == 'video' ? item?.thumbnailUrl : '' }}"></a>
-  </div>
-  <hr />
-  
-  <div class="col-md-10">
-    <h2>Images</h2>
-    <a *ngFor="let item of items" href="{{ item?.type == 'image' ? item?.url : '' }}"><img src="{{  item?.type == 'image' ? item?.thumbnailUrl : '' }}"></a>
-  </div>
-  
-</div></div>
+
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile *ngFor="let item of videos; let i = index"><a href="{{ videos[i].url }}"><img src="{{ videos[i].thumbnailUrl }}"></a></mat-grid-tile>
+</mat-grid-list>
+
+<div class="header-text"><span>Images</span></div>
+<mat-grid-list cols="5" rowHeight="3:2">
+<div class="col-md-12">
+  <mat-grid-tile *ngFor="let item of images; let i = index" ><a href="{{ images[i].url }}"><img src="{{ images[i].thumbnailUrl }}"></a></mat-grid-tile>
+</div>
+</mat-grid-list>
