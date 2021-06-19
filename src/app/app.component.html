@@ -13,6 +13,9 @@
 <hr />
 <div class="container row">
   <div class="col-md-12">
-      <a *ngFor="let item of items" href="{{ item?.url }}"><img src="{{ item?.thumbnailUrl }}"></a>
+      <a *ngFor="let item of items" href="{{ item?.type == 'video' ? item?.url : '' }}"><img src="{{  item?.type == 'video' ? item?.thumbnailUrl : '' }}"></a>
+  </div>
+  <div class="col-md-10">
+      <a *ngFor="let item of items" href="{{ item?.type == 'image' ? item?.url : '' }}"><img src="{{  item?.type == 'image' ? item?.thumbnailUrl : '' }}"></a>
   </div>
 </div></div>

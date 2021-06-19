@@ -1,7 +1,7 @@
-export interface Image {
+export interface FileModel {
     title: string;
     thumbnailName: string;
     thumbnailUrl: string;
     url: string;
-    altText: string;
+    type: string;
   }

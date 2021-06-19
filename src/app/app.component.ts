@@ -1,6 +1,6 @@
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Image } from './image';
+import { FileModel } from './fileModel';
 import { environment } from '../environments/environment';
 declare  var jQuery:  any;
 @Component({
@@ -17,12 +17,12 @@ export class AppComponent {
   base64Data: any;
   retrieveResonse: any;
   message!: String;
-  items: Image[] = [];
+  items: FileModel[] = [];
 
   public ngOnInit() {
     (function ($) {
       $(document).ready(function(){
-        $('.col-md-12').photobox('a',{ time:0 });
+        $('.col-md-10').photobox('a',{ time:0 });
       });
     })(jQuery);
     this.updateImages();
@@ -50,7 +50,7 @@ export class AppComponent {
   }
 
   public updateImages() {
-    this.httpClient.get<Image[]>(environment.baseUrl + '/files/list').subscribe((resp) => {
+    this.httpClient.get<FileModel[]>(environment.baseUrl + '/files/list').subscribe((resp) => {
       this.items = resp;
     });
   }
