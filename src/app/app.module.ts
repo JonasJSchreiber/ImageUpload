@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { NgxGalleryModule } from 'ngx-gallery-9';
 @NgModule({
   declarations: [
     AppComponent
@@ -15,7 +16,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MatGridListModule
+    MatGridListModule,
+    NgxGalleryModule
   ],
 
   providers: [],

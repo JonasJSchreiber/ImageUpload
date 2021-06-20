@@ -5,17 +5,12 @@
 </div>
 <div *ngIf=message>{{message}}</div>
 
-<div class="header-text">
-<span>Videos</span>
+<div class="header-text"><span>Images</span></div>
+<div class="col-md-12" style='text-align: center;'>
+  <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
 </div>
 
+<div class="header-text"><span>Videos</span></div>
 <mat-grid-list cols="2" rowHeight="2:1">
   <mat-grid-tile *ngFor="let item of videos; let i = index"><a href="{{ videos[i].url }}"><img src="{{ videos[i].thumbnailUrl }}"></a></mat-grid-tile>
-</mat-grid-list>
-
-<div class="header-text"><span>Images</span></div>
-<mat-grid-list cols="5" rowHeight="3:2">
-<div class="col-md-12">
-  <mat-grid-tile *ngFor="let item of images; let i = index" ><a href="{{ images[i].url }}"><img src="{{ images[i].thumbnailUrl }}"></a></mat-grid-tile>
-</div>
 </mat-grid-list>

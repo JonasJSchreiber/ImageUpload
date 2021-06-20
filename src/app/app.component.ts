@@ -1,10 +1,9 @@
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Component, Input } from "@angular/core";
 import { FileModel } from './fileModel';
-import { Button } from '@material-ui/core';
-import Container from '@material-ui/core/Container';
+import 'hammerjs';
 import { environment } from '../environments/environment';
-declare  var jQuery:  any;
+import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery-9';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -20,16 +19,21 @@ export class AppComponent {
   retrieveResonse: any;
   message!: String;
   videos: FileModel[] = [];
-  images: FileModel[] = [];
+  images: FileModel[] = []; 
+  galleryOptions: NgxGalleryOptions[] = [];
+  galleryImages: NgxGalleryImage[] = [];
 
 	@Input() pushMainContentToRight: boolean = false;
   public ngOnInit() {
-    (function ($) {
-      $(document).ready(function(){
-        $('.col-md-12').photobox('a',{ time:0 });
-      });
-    })(jQuery);
     this.fetchFiles();
+    this.galleryOptions = [
+      {
+          width: '600px',
+          height: '400px',
+          thumbnailsColumns: 4,
+          imageAnimation: NgxGalleryAnimation.Slide
+      }
+    ]
   }
 
   //Gets called when the user selects an image
@@ -54,6 +58,12 @@ export class AppComponent {
   }
 
   public fetchFiles() {
+    this.httpClient.get<NgxGalleryImage[]>(environment.baseUrl + '/files/listImages').subscribe((resp) => {
+      let files: NgxGalleryImage[] = resp;
+      for (var i of files) {
+        this.galleryImages.push(i);
+      }
+    });
     this.httpClient.get<FileModel[]>(environment.baseUrl + '/files/list').subscribe((resp) => {
       let files: FileModel[] = resp;
       this.images = [];
