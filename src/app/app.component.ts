@@ -19,7 +19,6 @@ export class AppComponent {
   retrieveResonse: any;
   message!: String;
   videos: FileModel[] = [];
-  images: FileModel[] = []; 
   galleryOptions: NgxGalleryOptions[] = [];
   galleryImages: NgxGalleryImage[] = [];
 
@@ -80,16 +79,10 @@ export class AppComponent {
         this.galleryImages.push(i);
       }
     });
-    this.httpClient.get<FileModel[]>(environment.baseUrl + '/files/list').subscribe((resp) => {
+    this.httpClient.get<FileModel[]>(environment.baseUrl + '/files/listVideos').subscribe((resp) => {
       let files: FileModel[] = resp;
-      this.images = [];
-      this.videos = [];
       for (var i of files) {
-        if (i.type == 'image') {
-          this.images.push(i);
-        } else if (i.type == 'video') {
-          this.videos.push(i);
-        }
+        this.videos.push(i);
       }
     });
   }
