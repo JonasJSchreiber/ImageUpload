@@ -9,6 +9,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { NgxGalleryModule } from 'ngx-gallery-9';
 import { ImagesComponent } from './images/images.component';
 import { VideosComponent } from './videos/videos.component';
+import { UploadComponent } from './upload/upload.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     ImagesComponent,
-    VideosComponent
+    VideosComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,5 @@
+<div class="form">
+    <input type="file" name="files" (change)="onFileChanged($event)" multiple>
+    <p>Upload</p>
+</div>
+<div *ngIf=message>{{message}}</div>

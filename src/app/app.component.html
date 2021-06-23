@@ -1,17 +1,10 @@
 
-<div class="form">
-    <input type="file" name="files" (change)="onFileChanged($event)" multiple>
-    <p>Upload</p>
-</div>
-<div *ngIf=message>{{message}}</div>
 
-<!-- <a [routerLink]="['/images']">Images</a> -->
-<div class="header-text"><span>Images</span></div>
-<div class="col-md-12" style='text-align: center;'>
-  <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
-</div>
+<a [routerLink]="['/images']">Images</a>
+<br />
+<a [routerLink]="['/upload']">Upload</a>
+<br />
+<a [routerLink]="['/videos']">Videos</a>
+<br />
 
-<div class="header-text"><span>Videos</span></div>
-<mat-grid-list cols="2" rowHeight="2:1">
-  <mat-grid-tile *ngFor="let item of videos; let i = index"><a href="{{ videos[i].url }}"><img src="{{ videos[i].thumbnailUrl }}"></a></mat-grid-tile>
-</mat-grid-list>
+<router-outlet></router-outlet>

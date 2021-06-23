@@ -1,1 +1,4 @@
-<p>videos works!</p>
+<div class="header-text"><span>Videos</span></div>
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile *ngFor="let item of videos; let i = index"><a href="{{ videos[i].url }}"><img src="{{ videos[i].thumbnailUrl }}"></a></mat-grid-tile>
+</mat-grid-list>
