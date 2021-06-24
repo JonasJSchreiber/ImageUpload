@@ -1,5 +1,21 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css"; // your theme
 
-.mat-sidenav-container, .mat-sidenav-content, .mat-tab-body-content {
-    transform: none !important;
-}
+.sidenav-container {
+    height: 100%;
+    margin: -8px;
+  }
+  
+  .sidenav {
+    width: 200px;
+  }
+  
+  .sidenav .mat-toolbar {
+    background: inherit;
+  }
+  
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  

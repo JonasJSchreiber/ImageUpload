@@ -10,7 +10,15 @@ import { NgxGalleryModule } from 'ngx-gallery-9';
 import { ImagesComponent } from './images/images.component';
 import { VideosComponent } from './videos/videos.component';
 import { UploadComponent } from './upload/upload.component';
-
+import { CommonModule } from '@angular/common';
+import { NoopAnimationsModule  } from '@angular/platform-browser/animations'
+import { MatIconModule } from '@angular/material/icon'; 
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar'; 
+import { MatSidenavModule } from '@angular/material/sidenav'; 
+import { MatListModule } from '@angular/material/list'; 
+import 'hammerjs';
+import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: '', component: AppComponent },
   { path: 'images', component: ImagesComponent },
@@ -21,7 +29,8 @@ const routes: Routes = [
     AppComponent,
     ImagesComponent,
     VideosComponent,
-    UploadComponent
+    UploadComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +39,13 @@ const routes: Routes = [
     FormsModule,
     MatGridListModule,
     NgxGalleryModule,
+    CommonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule,
+    MatSidenavModule,
+    MatButtonModule,
+    NoopAnimationsModule,
     RouterModule.forChild(routes)
   ],
   exports: [ RouterModule ],

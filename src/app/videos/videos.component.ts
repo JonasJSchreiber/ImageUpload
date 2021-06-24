@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
   styleUrls: ['./videos.component.scss']
 })
 export class VideosComponent implements OnInit {
-
+  
   videos: FileModel[] = [];
   constructor(private httpClient: HttpClient) { }
   
