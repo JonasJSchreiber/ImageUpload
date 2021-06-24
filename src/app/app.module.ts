@@ -11,7 +11,7 @@ import { ImagesComponent } from './images/images.component';
 import { VideosComponent } from './videos/videos.component';
 import { UploadComponent } from './upload/upload.component';
 import { CommonModule } from '@angular/common';
-import { NoopAnimationsModule  } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule  } from '@angular/platform-browser/animations'
 import { MatIconModule } from '@angular/material/icon'; 
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar'; 
@@ -19,6 +19,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list'; 
 import 'hammerjs';
 import { HomeComponent } from './home/home.component';
+import { NavigationComponent } from './navigation/navigation.component';
 const routes: Routes = [
   { path: '', component: AppComponent },
   { path: 'images', component: ImagesComponent },
@@ -30,7 +31,8 @@ const routes: Routes = [
     ImagesComponent,
     VideosComponent,
     UploadComponent,
-    HomeComponent
+    HomeComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,7 @@ const routes: Routes = [
     MatListModule,
     MatSidenavModule,
     MatButtonModule,
-    NoopAnimationsModule,
+    BrowserAnimationsModule,
     RouterModule.forChild(routes)
   ],
   exports: [ RouterModule ],

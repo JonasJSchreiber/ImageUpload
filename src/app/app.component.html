@@ -3,13 +3,7 @@
         [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
         [mode]="(isHandset$ | async) ? 'over' : 'side'"
         [opened]="(isHandset$ | async) === false">
-      <mat-toolbar>Menu</mat-toolbar>
-      <mat-nav-list>
-        <a mat-list-item href="/">Home</a>
-        <a mat-list-item href="/images">Images</a>
-        <a mat-list-item href="/videos">Videos</a>
-        <a mat-list-item href="/upload">Upload</a>
-      </mat-nav-list>
+    <app-navigation></app-navigation>
     </mat-sidenav>
     <mat-sidenav-content>
       <mat-toolbar color="primary">
@@ -19,7 +13,7 @@
           mat-icon-button
           (click)="drawer.toggle()"
           *ngIf="isHandset$ | async">
-          <mat-icon aria-label="Side nav toggle icon">=</mat-icon>
+          <mat-icon aria-label="Side nav toggle icon"><i class="material-icons">menu</i></mat-icon>
         </button>
         <span>Wedding Gallery</span>
       </mat-toolbar>
