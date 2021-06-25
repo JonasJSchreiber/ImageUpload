@@ -3,8 +3,10 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.4.
 
 ## Development server
+
 Run `nohup ng serve --host 0.0.0.0 --disable-host-check 2>&1 >> /var/log/ng.log &` on the server
 
+Kill running process `kill -9 $(ps -aux | grep 'ng serve' | awk '{ print $2 }')`
 OR
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
