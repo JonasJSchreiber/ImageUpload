@@ -1,4 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles */
+
+* {
+    font-family: 'Roboto', Arial, sans-serif;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html, 
 body {
-    background-color: #333
+    height: 100%;
+    margin: 0;
+    min-height: 100%;
 }
+  
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+  .content-container {
+    height: 88%;
+  }

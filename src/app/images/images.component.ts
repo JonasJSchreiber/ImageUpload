@@ -14,6 +14,7 @@ export class ImagesComponent implements OnInit {
 
   galleryOptions: NgxGalleryOptions[] = [];
   galleryImages: NgxGalleryImage[] = [];
+  
   ngOnInit(): void {
     this.httpClient.get<NgxGalleryImage[]>(environment.baseUrl + '/files/listImages').subscribe((resp) => {
       let files: NgxGalleryImage[] = resp;
