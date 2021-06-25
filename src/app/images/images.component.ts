@@ -42,7 +42,8 @@ export class ImagesComponent implements OnInit {
       },
       // max-width 400
       {
-        breakpoint: 400
+        breakpoint: 400,
+        preview: false
       }
     ]
   }

@@ -5,19 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { MatGridListModule } from '@angular/material/grid-list';
 import { NgxGalleryModule } from 'ngx-gallery-9';
 import { ImagesComponent } from './images/images.component';
 import { VideosComponent } from './videos/videos.component';
 import { UploadComponent } from './upload/upload.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule  } from '@angular/platform-browser/animations'
-import { MatIconModule } from '@angular/material/icon'; 
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar'; 
-import { MatSidenavModule } from '@angular/material/sidenav'; 
-import { MatListModule } from '@angular/material/list'; 
 import 'hammerjs';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
 const routes: Routes = [
@@ -39,14 +34,9 @@ const routes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MatGridListModule,
+    NgbModule,
     NgxGalleryModule,
     CommonModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatListModule,
-    MatSidenavModule,
-    MatButtonModule,
     BrowserAnimationsModule,
     RouterModule.forChild(routes)
   ],
