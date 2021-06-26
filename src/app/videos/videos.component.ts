@@ -1,20 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { FileModel } from '../fileModel';
-import { HttpClient, HttpEventType } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-videos',
   templateUrl: './videos.component.html',
   styleUrls: ['./videos.component.scss']
 })
-export class VideosComponent implements OnInit {
-  
+export class VideosComponent {
+  toggleDisplay: boolean = false;
+  videoUrl: string = "";
+  thumbnailUrl: string = "";
   videos: FileModel[] = [];
-  constructor(private httpClient: HttpClient) { }
-  
-  ngOnInit(): void {
-    this.fetchFiles();
+  constructor(private httpClient: HttpClient,
+    private route: ActivatedRoute,
+    private router: Router) { 
+      this.toggleDisplay = false;
+      this.fetchFiles();
+      this.router.events.subscribe((url:any) => {
+        this.route.snapshot.queryParams.filename != null ? 
+        this.serveVideo(this.route.snapshot.queryParams.filename) : this.toggleDisplay = false;
+      });
+    }
+
+  public serveVideo(filename: string) {
+    this.toggleDisplay = true;
+    this.videoUrl = environment.baseUrl + "/files/getVideo?filename=" + filename;
+    this.thumbnailUrl = environment.baseUrl + "/files/getThumbnail?filename=" + filename;
   }
 
   public fetchFiles() {

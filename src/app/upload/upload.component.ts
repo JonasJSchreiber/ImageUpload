@@ -11,7 +11,7 @@ export class UploadComponent implements OnInit {
   imageName!: string;
   selectedFile!: File[];
   message!: String;
-
+  loading: boolean = false;
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
@@ -19,6 +19,7 @@ export class UploadComponent implements OnInit {
 
   //Gets called when the user selects an image
   public onFileChanged(event: any) {
+    this.loading = true;
     //Select File
     this.selectedFile = event.target.files;
     for (var file of this.selectedFile) {
@@ -32,6 +33,7 @@ export class UploadComponent implements OnInit {
           if (response.status !== 200) {
             this.message = 'Image not uploaded successfully';
           }
+          this.loading = false;
         }
         );
     }    

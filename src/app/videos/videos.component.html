@@ -1,3 +1,7 @@
-<div *ngFor="let item of videos; let i = index">
-  <a href="{{ videos[i].url }}"><img src="{{ videos[i].thumbnailUrl }}"></a>
+
+<div class="content-container" style='text-align: center' *ngIf="!toggleDisplay">
+  <div *ngFor="let item of videos; let i = index">
+    <a [routerLink]="['../videos']" [queryParams]="{filename: videos[i].filename}"><img src="{{ videos[i].thumbnailUrl }}"></a>
+  </div>
 </div>
+<video *ngIf="toggleDisplay" autoplay loop controls="true" muted playsinline id="video" src="{{ videoUrl}}" poster="{{ thumbnailUrl }}" preload="auto" style="width: 100%"></video>
