@@ -1,6 +1,6 @@
 
-<div class="content-container" style='text-align: center' *ngIf="!toggleDisplay">
-  <div *ngFor="let item of videos; let i = index">
+<div *ngIf="!toggleDisplay">
+  <div class="video-thumbs" *ngFor="let item of videos; let i = index">
     <a [routerLink]="['../videos']" [queryParams]="{filename: videos[i].filename}"><img src="{{ videos[i].thumbnailUrl }}"></a>
   </div>
 </div>
