@@ -1,6 +1,8 @@
 <div *ngIf="!loading" class="form">
+    <div class="content-container">
     <input type="file" name="files" (change)="onFileChanged($event)" multiple>
     <p>Upload</p>
+</div>
 </div>
 <div style="text-align: center; margin-left: 45%" *ngIf="loading" class="spinner-border" role="status">
     <span class="sr-only">Loading...</span>

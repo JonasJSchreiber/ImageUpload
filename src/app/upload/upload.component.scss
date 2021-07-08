@@ -1,14 +1,19 @@
 
+.content-container {
+  min-height: 90%;
+  height: 90%;
+}
 .form{
     margin: 20px auto;
     max-width: 220px;
     border-radius: 5px;
-    background: #117A60;
-    border: 5px solid #117A60;
+    background: #00838f;
+    border: 5px solid #00838f;
   }
   .form p{
     width: 100%;
-    height: 100%;
+    height: 35px;
+    max-height: 35px;
     text-align: center;
     color: #fff;
     font-family: Arial;
@@ -22,6 +27,8 @@
   .form input{
     position: absolute;
     color: #0C5645;
+    background-color: #00838f;
+    height: 35px;
     margin: 0;
     padding: 0;
     outline: none;
@@ -29,8 +36,8 @@
   }
   .form button{
     margin: 0;
-    color: #0C5645;
-    background: #16a085;
+    color: #00838f;
+    background: #00838f;
     border: none;
     width: 100%;
     height: 35px;
@@ -41,8 +48,8 @@
     outline: none;
   }
   .form button:hover {
-    background: #149174;
-          color: #0C5645;
+    background: #00838f;
+          color: #00838f;
   }
   form button:active{
     border:0;
