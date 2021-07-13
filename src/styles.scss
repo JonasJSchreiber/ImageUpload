@@ -6,30 +6,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  html, 
-body {
-    height: 90vh;
-    margin: 0;
-}
-@media (min-height: 850px) {
-  .content-container, app-upload {
-    height: 80%;
-    min-height: 80%;
-  }
-}
-
-@media (min-height: 550px) {
-  .content-container {
-    margin: 0 0 20px;
-  }
-}
-
-@media (min-height: 500px) {
-  app-upload, app-home {
-    display:block;
-    height: 80%;
-  }
-}
 
   .container {
     display: flex;
