@@ -1,5 +1,5 @@
 export interface FileModel {
-    title: string;
+    filename: string;
     thumbnailName: string;
     thumbnailUrl: string;
     url: string;

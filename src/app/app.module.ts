@@ -15,6 +15,9 @@ import 'hammerjs';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { FooterComponent } from './footer/footer.component';
+
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 const routes: Routes = [
   { path: '', component: AppComponent },
   { path: 'images', component: ImagesComponent },
@@ -27,7 +30,8 @@ const routes: Routes = [
     VideosComponent,
     UploadComponent,
     HomeComponent,
-    NavigationComponent
+    NavigationComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,7 @@ const routes: Routes = [
     NgxGalleryModule,
     CommonModule,
     BrowserAnimationsModule,
+    MDBBootstrapModule,
     RouterModule.forChild(routes)
   ],
   exports: [ RouterModule ],
