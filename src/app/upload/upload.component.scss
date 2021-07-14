@@ -6,20 +6,20 @@
 .form{
     margin: 20px auto;
     max-width: 220px;
+    max-height: 70px;
     border-radius: 5px;
     background: #00838f;
     border: 5px solid #00838f;
   }
   .form p{
     width: 100%;
+    vertical-align: middle;
     height: 35px;
     max-height: 35px;
     text-align: center;
     color: #fff;
     font-family: Arial;
-    margin-top: 10px;
-    padding: 5px 10px 0 10px;
-    vertical-align: middle;
+    margin-top: 20px;
     font-family: 'Roboto', sans-serif;
     font-size: 20px; 
     line-height: 1;

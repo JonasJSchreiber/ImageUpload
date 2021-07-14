@@ -11,3 +11,10 @@
     display: flex;
     flex-direction: row;
   }
+@media (min-height: 500px) {
+  app-images {
+    height: 80%;
+    min-height: 80%;
+    margin-bottom: 20%;
+  }
+}
