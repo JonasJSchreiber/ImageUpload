@@ -3,6 +3,7 @@ import { HttpClient, HttpEventType } from '@angular/common/http';
 import 'hammerjs';
 import { environment } from '../../environments/environment';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery-9';
+import { AppComponent } from '../app.component';
 @Component({
   selector: 'app-images',
   templateUrl: './images.component.html',
@@ -10,12 +11,13 @@ import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gal
 })
 export class ImagesComponent implements OnInit {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private appComponent: AppComponent) { }
 
   galleryOptions: NgxGalleryOptions[] = [];
   galleryImages: NgxGalleryImage[] = [];
   
   ngOnInit(): void {
+    this.appComponent.hideFooter = true;
     this.httpClient.get<NgxGalleryImage[]>(environment.baseUrl + '/files/listImages').subscribe((resp) => {
       let files: NgxGalleryImage[] = resp;
       for (var i of files) {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
+import { AppComponent } from '../app.component';
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
@@ -12,9 +13,10 @@ export class UploadComponent implements OnInit {
   selectedFile!: File[];
   message!: String;
   loading: boolean = false;
-  constructor(private httpClient: HttpClient, private router: Router) { }
+  constructor(private httpClient: HttpClient, private router: Router,private appComponent: AppComponent) { }
 
   ngOnInit(): void {
+    this.appComponent.hideFooter=false;
   }
 
   //Gets called when the user selects an image
