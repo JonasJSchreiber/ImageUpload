@@ -13,10 +13,10 @@ export class UploadComponent implements OnInit {
   selectedFile!: File[];
   message!: String;
   loading: boolean = false;
-  constructor(private httpClient: HttpClient, private router: Router,private appComponent: AppComponent) { }
+  constructor(private httpClient: HttpClient, private router: Router, private appComponent: AppComponent) { }
 
   ngOnInit(): void {
-    this.appComponent.hideFooter=false;
+    this.appComponent.hideFooter=true;
   }
 
   //Gets called when the user selects an image
