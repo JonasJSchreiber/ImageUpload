@@ -3,6 +3,7 @@ import { FileModel } from '../fileModel';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Router, ActivatedRoute } from "@angular/router";
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-videos',
@@ -16,7 +17,9 @@ export class VideosComponent {
   videos: FileModel[] = [];
   constructor(private httpClient: HttpClient,
     private route: ActivatedRoute,
-    private router: Router) { 
+    private router: Router,
+    private appComponent: AppComponent) { 
+      this.appComponent.hideFooter = true;
       this.toggleDisplay = false;
       this.fetchFiles();
       this.router.events.subscribe((url:any) => {

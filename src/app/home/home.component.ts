@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AppComponent } from '../app.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private appComponent: AppComponent) { }
 
   ngOnInit(): void {
+    this.appComponent.hideFooter = false;
   }
 
 }

@@ -4,4 +4,7 @@
     <a [routerLink]="['../videos']" [queryParams]="{filename: videos[i].filename}"><img src="{{ videos[i].thumbnailUrl }}"></a>
   </div>
 </div>
+<div *ngIf="toggleDisplay" style="min-height: 100%">
 <video *ngIf="toggleDisplay" autoplay loop controls="true" muted playsinline id="video" src="{{ videoUrl}}" poster="{{ thumbnailUrl }}" preload="auto" style="width: 100%"></video>
+
+</div>
