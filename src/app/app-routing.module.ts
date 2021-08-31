@@ -7,6 +7,7 @@ import { VideosComponent } from './videos/videos.component';
 import { LivestreamComponent } from './livestream/livestream.component';
 import { MenuComponent } from './menu/menu.component';
 import { SeatingComponent } from './seating/seating.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'videos', component: VideosComponent },
   { path: 'livestream', component: LivestreamComponent },
   { path: 'menu', component: MenuComponent },
-  { path: 'seating', component: SeatingComponent }
+  { path: 'seating', component: SeatingComponent },
+  { path: 'schedule', component: ScheduleComponent }
 ];
 
 @NgModule({

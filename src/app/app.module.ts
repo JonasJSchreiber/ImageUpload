@@ -21,6 +21,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { MenuComponent } from './menu/menu.component';
 import { LivestreamComponent } from './livestream/livestream.component';
 import { SeatingComponent } from './seating/seating.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 const routes: Routes = [
   { path: '', component: AppComponent },
   { path: 'images', component: ImagesComponent },
@@ -37,7 +38,8 @@ const routes: Routes = [
     FooterComponent,
     MenuComponent,
     LivestreamComponent,
-    SeatingComponent
+    SeatingComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,
